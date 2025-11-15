@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-tests"
+version = "0.1.0"
+description = "Experimental Agentic Process Preference Test harness"
+authors = [{name = "OpenAI Agent", email = "agent@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+agentic = [
+    "openai-evals>=0.3.0",
+]
+
+[project.scripts]
+agentic-tests = "agentic_tests.runner:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentic_tests"]
